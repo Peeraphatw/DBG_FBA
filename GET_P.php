@@ -9,7 +9,6 @@ include("condb.php"); // ไฟล์เชือมต่อฐานข้อ�
     <meta charset="utf-8">
     <title>รายการครุภัณฑ์ประจำปี</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
     <style>
     @page {
         size: A4 landscape;
@@ -19,7 +18,6 @@ include("condb.php"); // ไฟล์เชือมต่อฐานข้อ�
         margin-bottom: 2mm;
         /* <any of the usual CSS values for margins> */
     }
-
 
     html {
         font-family: Arial, "times New Roman", tahoma;
@@ -81,7 +79,6 @@ include("condb.php"); // ไฟล์เชือมต่อฐานข้อ�
 </head>
 
 <body>
-
     <?php
 $total_page_data = 0;  // เก็บจำนวนหน้า รายการทั้งหมด
 $total_page_item = 6; // จำนวนรายการที่แสดงสูงสุดในแต่ละหน้า
@@ -92,41 +89,27 @@ $arr_data_set=array(array()); // [][];
 $from_date = $_GET['fdate'];
 $to_date = $_GET['bdate'];
 if($_GET['type']== "ครุภัณฑ์เงินรายได้"){
-
-// if (($_GET['name'] == "") && ($_GET['fdate'] == "") && ($_GET['bdate'] == "")){
-//   $sql = "SELECT * FROM durabl_fba";
-// }
-// Search By Name 
 if($_GET['name'] != "")
 {
 
 $sql = "SELECT * FROM durabl_fba WHERE (name LIKE '%".$_GET["name"]."%')";
-
 }
 if ($_GET['fdate'] != ""){
 $sql = "SELECT * 
 FROM durabl_fba
 WHERE (name LIKE '%".$_GET["name"]."%') AND date BETWEEN '" . $from_date . "' AND  '" . $to_date . "'  ";
-
 }
 }
 if($_GET['type']== "ครุภัณฑ์เงินงบประมาณแผ่นดิน"){
 
-// if (($_GET['name'] == "") && ($_GET['fdate'] == "") && ($_GET['bdate'] == "")){
-//   $sql = "SELECT * FROM durabl_fbam";
-// }
-
 if($_GET['name'] != "")
 {
-// Search By Name 
 $sql = "SELECT * FROM durabl_fbam WHERE (name LIKE '%".$_GET["name"]."%')";
-
 }
 if ($_GET['fdate'] != ""){
 $sql = "SELECT * 
 FROM durabl_fbam
 WHERE (name LIKE '%".$_GET["name"]."%') AND date BETWEEN '" . $from_date . "' AND  '" . $to_date . "'  ";
-
 }
 }
 ?>
@@ -175,15 +158,10 @@ function DateThaiD($strDate)
     <div class="row">
         <div class="col-10"></div>
         <div class="col"></div>
-
         <div class="col">
             <p>หน้าที่ &nbsp;<?=$i?></P>
         </div>
-
     </div>
-
-
-
     <img src="assets/Images/logo1bw.png" style="float:left; padding:0px; margin:0px;">
     <center>
         <h3><b>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</b></h3>
@@ -192,8 +170,6 @@ function DateThaiD($strDate)
         <h4><b>รายการครุภัณฑ์สำหรับตรวจสอบประจำปี ณ วันที่
                 <?php echo "".DateThaiD($strDate);?>&nbsp;(<?php echo $_GET['type'];?>) </b></h4>
     </center>
-
-
     <hr noshade="noshade" size="6" color="black">
     <?php
 if($i==1){
@@ -201,10 +177,7 @@ if($i==1){
 }else{
     echo "<center><h5><b>คณะบริหารธุกิจ (ต่อ)</b></h5></center>";
 }
-
-
 ?>
-
     <table style="width:100%;">
         <tr>
             <th width="3%" ;>ลำดับ</th>
@@ -221,9 +194,7 @@ if($i==1){
             <td colspan="10"><b>สำนักงานคณะบดีคณะบริหารธุรกิจ</b></td>
         </tr>
         <?php
-       
         // ส่วนของ repeat content
-        
         for($v=1;$v<=$total_page_item;$v++){
             
             $item_i=(($i-1)*$total_page_item)+$v;
@@ -243,7 +214,6 @@ if($i==1){
             $item_i = isset($arr_data_set['picker'][$item_i])?$item_i:"";
             $price = isset($arr_data_set['price'][$item_i])?$arr_data_set['price'][$item_i]:"";
             $item_i = isset($arr_data_set['price'][$item_i])?$item_i:"";
-            
             if($date==""){
                 $date="";
             }else{
@@ -254,9 +224,7 @@ if($i==1){
             }else{
                 $date_p= date_format(date_create($date),"d/m/Y");
             }
-            
         ?>
-
         <tr>
 
             <td style="text-align:right" ; valign=";top" ;><?=$item_i?></td>
@@ -269,12 +237,8 @@ if($i==1){
             <td style="text-align:left" valign="top"><?=$picker?></td>
             <td style="text-align:right" valign="top"><?=number_format($price,2,'.',',')?></td>
         </tr>
-
         <?php   } ?>
-
     </table>
-
-
     <?php }   ?>
     <?php
 function DateThai($strDate)
@@ -286,10 +250,8 @@ function DateThai($strDate)
 		
 		return "$strHour:$strMinute";
 	}
-
     $strDate =date('h:i:s a', time());
     ?>
-
     <footer class="row fixed-bottom">
         <div class="col">
             <p>พิมพ์โดย <?php echo  $_SESSION["name"]; ?>&nbsp;<?php echo  $_SESSION["lastname"]; ?>&nbsp;เมื่อวันที่
@@ -298,7 +260,6 @@ function DateThai($strDate)
         </div>
         <div class="col"> </div>
     </footer>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="node_modules/jquery/dist/jquery.min.js"></script>

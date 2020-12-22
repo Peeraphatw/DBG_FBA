@@ -26,9 +26,9 @@ function DateThaiD($strDate)
 class PDF extends FPDF
 	{
 		function Header(){
-			$this->Image('logo1bw.png',10,7,0);
-			$this->AddFont('angsa','','angsa.php');
-			$this->SetFont('angsa','',24);
+			 $this->Image('logo1bw.png',10,7,0);
+			 $this->AddFont('angsa','','angsa.php');
+			 $this->SetFont('angsa','',24);
 			 $this->Cell(0,0,iconv( 'UTF-8','TIS-620','มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ'),0,1,"C");
 			 $this->Ln(9);
 			 $this->SetFont('angsa','',20);

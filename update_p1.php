@@ -31,23 +31,16 @@ include("CKUSER.php");
         font-size: 14px;
     }
     </style>
-
-
 </head>
 <?php
-
 session_start(); 
-
 ?>
 
 <body id="page-top">
-
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
             <!-- Sidebar - Brand -->
             <br>
             <a class="sidebar-brand d-flex align-items-center justify-content-center">
@@ -66,37 +59,30 @@ session_start();
                     <i class="fas fa-door-open"></i>
                     <span>หน้าแรก</span></a>
             </li>
-
-
-
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="durable_user.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>ครุภัณฑ์เงินรายได้</span></a>
             </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="durable_user1.php">
                     <i class="fas fa-fw fa-table"></i>
                     <span>ครุภัณฑ์งบประมาณแผ่นดิน</span></a>
             </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="Print1.php">
                     <i class="fas fa-print"></i>
                     <span>พิมพ์รายการครุภัณฑ์</span></a>
             </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="update_p1.php">
                     <i class="fas fa-id-card"></i>
                     <span>จัดการข้อมูลส่วนตัว</span></a>
             </li>
-
             <!-- Nav Item - Tables -->
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
@@ -105,38 +91,24 @@ session_start();
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-
         </ul>
         <!-- End of Sidebar -->
-
         <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
-
             <!-- Main Content -->
             <div id="content">
-
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                     <!-- Sidebar Toggle (Topbar) -->
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto ">
-
-
-
-
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow ">
                             <a class="nav-link dropdown-toggle " href="#" id="userDropdown" role="button"
@@ -145,30 +117,22 @@ session_start();
                                     class="mr-2 d-none d-lg-inline text-gray-800"><?php echo  $_SESSION["name"]; ?>&nbsp;<?php echo  $_SESSION["lastname"]; ?></span>
                                 <img class="img-profile rounded-circle" src="assets/images/user.png">
                             </a>
-
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">ข้อมูลส่วนตัว</h1>
-
                     <!-- Content Row -->
                     <div class="row">
-
                         <div class="col-xs-12 col-sm-10 col-md-10 col-lg-7 col-xl-4">
-
                             <!-- Area Chart -->
                             <div class="card shadow mb-4">
                                 <div class="card-header py-3 text-gray-800 bg-gradient-primary">
                                     <h6 class="m-0 font-weight-bold text-gray-100">แก้ใขข้อมูลส่วนตัว</h6>
                                 </div>
                                 <div class="card-body text-gray-800">
-
                                     <form action="updateBE.php" method="post">
                                         <div class="form-group">
                                             <label for="exampleFormControlInput1">Username</label>
@@ -236,28 +200,18 @@ session_start();
                                             <input type="text" class="form-control" name="number"
                                                 value="<?php echo $_SESSION["number"]; ?>">
                                         </div>
-
                                         <input class="btn btn-primary" type="submit" value="ยืนยัน">
                                         <input class="btn btn-info" type="reset" value="ยกเลิก">
-
                                     </form>
-
                                 </div>
                             </div>
-
-
-
                         </div>
                         <!-- /.container-fluid -->
-
                     </div>
                 </div>
             </div>
             <!-- End of Main Content -->
-
-
             <!-- Footer -->
-
             <footer class="sticky-footer bg-white ">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
@@ -266,18 +220,14 @@ session_start();
                 </div>
             </footer>
             <!-- End of Footer -->
-
         </div>
         <!-- End of Content Wrapper -->
-
     </div>
     <!-- End of Page Wrapper -->
-
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
-
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -297,24 +247,18 @@ session_start();
             </div>
         </div>
     </div>
-
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
-
     <!-- Page level plugins -->
     <script src="assets/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/datatables-demo.js"></script>
-
 </body>
 
 </html>

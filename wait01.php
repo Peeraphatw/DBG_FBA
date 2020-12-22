@@ -5,10 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="assets/css/style01.css">
     <title>รออนุมัติ</title>
@@ -34,7 +32,6 @@ session_start();
                             <table class="table table-bordered " width="100%">
                                 <br />
                                 <tr>
-
                                     <th width="20%" style="text-align:center" ;>
                                         <h6 class="font-weight-bold">ลำดับที่</h6>
                                     </th>
@@ -47,8 +44,6 @@ session_start();
                                     <th width="30%" style="text-align:center" ;>
                                         <h6 class="font-weight-bold">สถานะ</h6>
                                     </th>
-
-
                                 </tr>
                                 <tr>
                                     <!-- form -->
@@ -58,29 +53,23 @@ session_start();
                                     <td style="text-align:center" ; valign="top" ;><?php echo  $_SESSION["lastname"]; ?>
                                     </td>
                                     <td class="text-danger" style="text-align:center" ; valign="top" ;>
-                                        <b><?php echo  $_SESSION["mlev"]; ?></b></td>
+                                        <b><?php echo  $_SESSION["mlev"]; ?></b>
+                                    </td>
                                 </tr>
                             </table>
                             <br />
                             <center><button onclick="goBack()" class="btn btn-primary">กลับหน้าหลัก</button></center>
-
                             <script>
                             function goBack() {
                                 window.location = "logout.php";
                             }
                             </script>
-
                         </div> <!-- card-body end .// -->
                     </div> <!-- card.// -->
                 </div> <!-- col.//-->
             </div> <!-- row.//-->
         </div>
         <!--container end.//-->
-
-
-
-
-
         <!-- Bootstrap core JavaScript-->
         <script src="assets/vendor/jquery/jquery.min.js"></script>
         <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -93,7 +82,6 @@ session_start();
         <script src="assets/vendor/datatables/dataTables.bootstrap4.min.js"></script>
         <!-- Page level custom scripts -->
         <script src="assets/js/demo/datatables-demo.js"></script>
-
 </body>
 
 </html>

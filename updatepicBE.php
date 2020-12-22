@@ -11,13 +11,9 @@ $image_path = "Pic/";
 $upload_path = $image_path.$new_image_name;
 // uploading
 $success = move_uploaded_file($_FILES['dbg_pic']['tmp_name'],$upload_path);
-
 $dbg_pic = $new_image_name;
-
 $sql= "UPDATE durabl_fba SET dbg_pic='$dbg_pic'WHERE id='$id'";
-
     $rs = mysqli_query ($con,$sql);
-	
 if ($rs) {
 	echo "<script>";
 	echo "location.href='durable_admin.php'";
@@ -25,5 +21,4 @@ if ($rs) {
    } else {
     echo "ErrorNAJA:";
 }
-
 ?>

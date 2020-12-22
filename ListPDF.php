@@ -49,10 +49,8 @@ function DateThai($strDate)
 		$strMonthThai=$strMonthCut[$strMonth];
 		return "$strDay $strMonthThai $strYear";
    }
-  
-   
-  $pdf = new PDF();//สร้าง object pdf 
-  $pdf->AliasNbPages();
+ $pdf = new PDF();//สร้าง object pdf 
+ $pdf->AliasNbPages();
  $pdf->AddPage('L','A4',0);//หาก เราใช้คำสั่ง  $pdf->AddPage("l"); จะได้ pdf ขนาด A4 เป็น แนวนอน
  $pdf->AddFont('angsa','','angsa.php');
  $pdf->AddFont('angsa','B','angsab.php');
@@ -78,22 +76,15 @@ function DateThai($strDate)
 	$pdf->Cell(30,10,iconv("UTF-8", "TIS-620","เลขที่ใบเสร็จส่งของ"),1,0,"C");
 	$pdf->Cell(20,10,iconv("UTF-8", "TIS-620","วันที่เบิก"),1,0,"C");
 	$pdf->Cell(35,10,iconv("UTF-8", "TIS-620","ขื่อผู้เบิก"),1,0,"C");
-   $pdf->Cell(20,10,iconv("UTF-8", "TIS-620","ราคา/หน่วย"),1,0,"C"); 
-   
-   $pdf->Ln(7);
-   
-
-                                        // Check connection
+   $pdf->Cell(20,10,iconv("UTF-8", "TIS-620","ราคา/หน่วย"),1,0,"C");  
+   $pdf->Ln(7);                                      // Check connection
   if ($conn->connect_error) {
      die("Connection failed: " . $conn->connect_error);
- } 
-
-                                        
+ }                                 
      $result = $conn->query($sql);
      $n =1;
      $i = 51;
-     if ($result->num_rows > 0) {
-                                             // output data of each row
+     if ($result->num_rows > 0) {                                    // output data of each row
      while($row = $result->fetch_assoc()) {
         // echo "<tr><td>". $row["No"]. "</td> <td> ". $row["No_List"]. "</td> <td>" . $row["N_List"] . "</td><td>". $row["U_List"]. "</td><td>". $row["P_List"]."</td><td>". $row["PL_List"]."</td></tr>";
          $pdf->setXY(10,$i);//แสดงข้อความห่างขอบซ้าย 10 ขอบบน 25
@@ -107,7 +98,6 @@ function DateThai($strDate)
         $pdf->Cell(20,10,iconv("UTF-8", "TIS-620",$row["date_p"]),1,0,"C"); 
         $pdf->Cell(35,10,iconv("UTF-8", "TIS-620",$row["picker"]),1,0,"C"); 
         $pdf->Cell(20,10,iconv("UTF-8", "TIS-620",$row["price"]),1,0,"R");
-        
         $i = $i+10;
         if ($i > 100) {
          $pdf->AddPage('L','A4',0);//หาก เราใช้คำสั่ง  $pdf->AddPage("l"); จะได้ pdf ขนาด A4 เป็น แนวนอน
@@ -139,14 +129,9 @@ function DateThai($strDate)
            $i = 51;
         }
         $n = $n+1;
-         
      }
      } else {
         // echo "<tr><th width=\"1000\"> ไม่พบข้อมูล </th></tr>";
       }
-
     $conn->close();
-                                
- 
-
  $pdf->Output();//สั่งพิมพ์ pdf
