@@ -7,12 +7,9 @@ include("condb.php");
 	$lastname = $_REQUEST["lastname"];
 	$department = $_REQUEST["department"];
 	$number = $_REQUEST["number"];
-	
 	$sql = "INSERT INTO user_dbg(username,password,name,lastname,department,number,mlev)
 VALUES ('$username','$password','$name','$lastname','$department','$number','user');";
-
     $rs = mysqli_query ($con,$sql);
-	
 if ($rs) {
 	echo "<script>";
 	echo "location.href='tables.php'";
@@ -20,9 +17,4 @@ if ($rs) {
    } else {
     echo "Error:";
 }
-
-                    
-	
-
-	
 	?>
